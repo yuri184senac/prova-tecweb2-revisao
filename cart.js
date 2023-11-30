@@ -31,3 +31,13 @@ function valorCompra() {
     valorTotalCompra.innerHTML = valor.toFixed(2)
 }
 
+function removerProduto() {
+    var pai = document.getElementById('carrinho')
+    var filho = document.getElementById('produto' + produto);
+    if (confirm('Deseja excluir o produto')) {
+        valorTotal[produto] -= valorProduto[produto] * qtd[produto]
+        qtd[produto] = 0
+        pai.removeChild(filho)
+        valorCompra()
+    }    
+}
